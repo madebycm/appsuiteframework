@@ -94,24 +94,20 @@ Code example:
 ```
 <div class="wStep step-1">
   <p>
-    Heisann, {{username}}!<br>
-    Jeg er wingme.
-  </p>
+    Hello, {{username}}!<br>  </p>
   <p>
-    Det ser ikke ut som du har brukt appen før.
-    Da er det på tide å MEKKE en konto!!
+    Welcome to the app. Ready to set up your account?
   </p>
-  <button wAction="_step->2">Okey, mos på!</button>
+  <button wAction="_step->2">Yes!</button>
 </div>
 <div class="wStep step-2">
-  Nå er du i steg 2.<br>
-  Her kan vi be deg om mer info. 
-  Vennligst fortsett, {{username}}!
-  <br><button wAction="_stepBack">Tilbake!</button>
-  <button style="color:#4dd963;" wAction="_step->3">Fortsett!</button>
+  This is step 2.<br>
+  Please continue, {{username}}!
+  <br><button wAction="_stepBack">Go back!</button>
+  <button style="color:#4dd963;" wAction="_step->3">Continue!</button>
 </div>
 <div class="wStep step-3">
-  All right, {{username}}, nå får du en brukerkonto!<br>  
-  <button wAction="confirm">Bekreft!</button>
+  All right, {{username}}, you're all ready to go.<br>  
+  <button wAction="confirm">Confirm</button>
 </div>
 ```
