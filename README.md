@@ -5,6 +5,8 @@ The fast, easy and lightweight framework for rapidly creating swift apps that lo
 
 Current version: 0.1 (while Zepto.js is the recommended library to use for performance reasons it is also fully compatible with jQuery)
 
+Please note that this framework is in active development. While it is being used for production apps published on the AppStore and Google PlayStore, it should not be considered production ready for the general public ... just yet.
+
 #Userguide
 
 madebycm AppSuite is a framework that favors convention over configuration.
