@@ -115,7 +115,3 @@ Code example:
   <button wAction="confirm">Bekreft!</button>
 </div>
 ```
-
-# Dev notes
-
-See baa9e02d679ce84b507ef2ba94dcf3e64d668016 for info on how to modularize API when it grows bigger.
