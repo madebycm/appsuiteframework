@@ -7,9 +7,7 @@ Current version: 0.1
 
 #Userguide
 
-madebycm App Suite is a framework that favors convention over configuration.
-
-As of may, 2014, it is designed with iOs 7 in mind and it follows the SPA architecture and *VC-pattern. It is written entirely in CoffeeScript
+madebycm AppSuite is a framework that favors convention over configuration.
 
 # Defining views
 
@@ -27,7 +25,7 @@ App.ctrl.elephants =
     return "Yum, I like food"
 ```
 
-Now go to ```http://url#elephants``` to see everything inaction. Simple as that.
+Now go to ```http://url#elephants``` to see everything in action. Simple as that.
 
 ## Every controller supports defining an ```_init()``` method.
 
@@ -61,18 +59,19 @@ The ```wAction``` attribute supports special actions. A special action is always
 
 Controllers can be overriden by supplying a ```wController``` attribute:
 
-```<button wController="lions" wAction="feed">Feed the elephant</button> <!-- will actually feed the lions -->```
+```
+<button wController="lions" wAction="feed">Feed the elephant</button>
+<!-- will actually feed the lions -->
+```
 
 # Hot passing data
-This works like Angulars's $scope.$apply, but is much nicer.
+This works like Angulars's $scope.$apply, but in a much nicer fashion.
 
 To hot pass data from a controller to another, simply write:
 ```$hotpass hello:world```
 
 # Accessing the run time
-To hot pass data directly into the current state, simply hot pass as described above, then just do a re-run of the runtime like this:
-
-```App.runtime()```
+To hot pass data directly into the current state, simply hot pass as described above, then just do a re-run of the runtime like this: ```App.runtime()```
 
 ```App.runtime()``` returns a promise, so you'll be able to write nice, async code in an easy matter
 
@@ -80,9 +79,9 @@ To hot pass data directly into the current state, simply hot pass as described a
 App.runtime().then ->
   # do some cool stuff with the DOM
 ```
-*Note* - if you'd like to hot pass data in the ```_init()``` method of a controller, supply a first argument so it doesn't end up in an infinite loop:
 
-```App.runtime(1)```
+*Note* - if you'd like to hot pass data in the ```_init()``` method of a controller, supply a first argument to ```runtime``` so it doesn't end up in an infinite loop:
+
 
 # Magic wizard forms
 
