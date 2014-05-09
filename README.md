@@ -1,9 +1,9 @@
 appsuiteframework
 =================
 
-The fast, easy and lightweight framework for rapidly creating swift apps that looks great on all devices
+The fast, easy and lightweight framework for rapidly creating swift apps that looks great on all devices.
 
-Current version: 0.1
+Current version: 0.1 (while Zepto.js is the recommended library to use for performance reasons it is also fully compatible with jQuery)
 
 #Userguide
 
@@ -80,7 +80,7 @@ App.runtime().then ->
   # do some cool stuff with the DOM
 ```
 
-*Note* - if you'd like to hot pass data in the ```_init()``` method of a controller, supply a first argument to ```runtime``` so it doesn't end up in an infinite loop:
+*Note* - if you'd like to hot pass data in the ```_init()``` method of a controller, supply a first argument to ```runtime`` so it doesn't end up in an infinite loop:
 
 
 # Magic wizard forms
