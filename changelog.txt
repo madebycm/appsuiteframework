@@ -1,2 +1,7 @@
+0.1.2
+- Add a skeleton folder
+- Remove obsolete code
+- Change "madebycm" intro console text to "AppSuite"
+
 0.1.1
-Remove force loading of the "login" route if no localStorage.user session exists
+- Remove force loading of the "login" route if no localStorage.user session exists
