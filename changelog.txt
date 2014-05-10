@@ -1,0 +1,2 @@
+0.1.1
+Remove force loading of the "login" route if no localStorage.user session exists
