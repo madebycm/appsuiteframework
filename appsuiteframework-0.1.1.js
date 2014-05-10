@@ -1,5 +1,3 @@
-// AppSuite Framework, v0.1
-// (c) 2014 madebycm
 (function() {
   var applyScope, getCurrentController, loadRoute, runtime, setUpListeners,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
@@ -190,11 +188,7 @@
   };
 
   App.runtime = runtime = function(skipFiringInitMethod) {
-    var route;
-    if (!localStorage.user && location.hash !== "#signup") {
-      route = 'login';
-    }
-    return loadRoute(route).then(function() {
+    return loadRoute().then(function() {
       if ((getCurrentController() != null) && (getCurrentController()._init != null) && !skipFiringInitMethod) {
         getCurrentController()._init();
         if (App.debug) {
