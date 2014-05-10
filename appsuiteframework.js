@@ -1,3 +1,5 @@
+// madebycm AppSuite Framework
+// v0.1.3
 (function() {
   var applyScope, getCurrentController, loadRoute, runtime, setUpListeners,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
@@ -12,7 +14,8 @@
     ctrl: {},
     CURRENT_CTRL: '',
     HOT_PASS: {},
-    RUNTIME_COUNTER: 0
+    RUNTIME_COUNTER: 0,
+    BOUND_EVENTS: []
   };
 
   setUpListeners = function() {
@@ -23,11 +26,15 @@
     pageHasStepWizardComponent = false;
     _stepWizardCounter = 1;
     doTheBind = function(el, attr) {
-      var wController;
+      var controllerToBind, wController;
       wController = el.attr('wController');
-      return el.bind('click', function(e) {
-        return App.ctrl[wController != null ? wController : App.CURRENT_CTRL][attr](e);
-      });
+      controllerToBind = wController != null ? wController : App.CURRENT_CTRL;
+      if (__indexOf.call(App.BOUND_EVENTS, controllerToBind) < 0) {
+        App.BOUND_EVENTS.push(controllerToBind);
+        return el.bind('click', function(e) {
+          return App.ctrl[controllerToBind][attr](e);
+        });
+      }
     };
     $('*').each(function() {
       var goToStep, isStepWizard, isStepWizardComponent, specialAction, thisBinderDefault, thisBinderText, wAction, wBind, wSupply, wUrl;
@@ -208,7 +215,7 @@
 
   $(document).ready(function() {
     if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-      console.log('%cAppSuite', 'font-size:20px;color:#fff;text-shadow:0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);');
+      console.log('%cAppSuite 0.1.3', 'font-size:20px;color:#fff;text-shadow:0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);');
     }
     runtime();
     return FastClick.attach(document.body);
