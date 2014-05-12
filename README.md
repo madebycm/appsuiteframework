@@ -90,6 +90,15 @@ Controllers can be overriden by supplying a ```wController``` attribute:
 ```
 
 # Data binding
+Data binding in AppSuite is as easy as can be.
+
+Code example:
+
+```
+<input wBind="name">
+Hello {{name}}, hope you're good!
+```
+
 ## Hot passing
 This works like Angulars's $scope.$apply, but in a much nicer fashion.
 To hot pass data from a controller to another, simply write:
