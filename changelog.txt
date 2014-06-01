@@ -1,3 +1,6 @@
+0.1.4
+- Fix rebinding of events (explicitly supporting the "ui" controller)
+
 0.1.3b [bugfix]
 - Keep track of the right stuff in App.BOUND_EVENTS
 

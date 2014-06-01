@@ -1,5 +1,5 @@
 // madebycm AppSuite Framework
-// v0.1.3b
+// v0.1.4
 (function() {
   var applyScope, getCurrentController, loadRoute, runtime, setUpListeners,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
@@ -35,8 +35,15 @@
           return App.ctrl[controllerToBind][attr](e);
         });
       } else {
-        if (App.debug != null) {
-          return console.log('NOT REBINDING:', attr);
+        if (controllerToBind !== 'ui') {
+          App.BOUND_EVENTS.push(attr);
+          return el.bind('click', function(e) {
+            return App.ctrl[controllerToBind][attr](e);
+          });
+        } else {
+          if (App.debug != null) {
+            return console.log('[Not rebound]', attr, 'from', controllerToBind);
+          }
         }
       }
     };
